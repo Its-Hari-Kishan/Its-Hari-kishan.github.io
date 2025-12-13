@@ -109,11 +109,124 @@
   transform: scale(1.1);
 }
 
+/* Profile frame: circular image with bright outer ring, subtle glow and animation */
+.about-img { display: flex; align-items: center; justify-content: center; }
+
+.profile-frame {
+	width: 320px;
+	height: 320px;
+	border-radius: 50%;
+	padding: 12px; /* ring thickness */
+	background: linear-gradient(135deg,#ffbd39 0%, #ffb22a 60%, #ff9a00 100%);
+	display: inline-block;
+	box-shadow: 0 0 28px rgba(255,189,57,0.20);
+	transition: transform .25s ease, box-shadow .25s ease;
+	transform-origin: center center;
+	animation: ring-pulse 4s ease-in-out infinite;
+}
+
+.profile-frame:hover { transform: scale(1.03); box-shadow: 0 0 48px rgba(0,163,255,0.38); }
+
+.profile-frame .profile-img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+	display: block;
+	border: 8px solid rgba(255,255,255,0.08); /* subtle inner edge */
+}
+
+@keyframes ring-pulse {
+	0% { transform: rotate(0deg); box-shadow: 0 0 12px rgba(0,163,255,0.18); }
+	50% { transform: rotate(2.5deg); box-shadow: 0 0 34px rgba(0,163,255,0.30); }
+	100% { transform: rotate(0deg); box-shadow: 0 0 12px rgba(0,163,255,0.18); }
+}
+
+@media (max-width: 1399px) { .profile-frame { width: 260px; height: 260px; padding: 10px; } }
+@media (max-width: 991px) { .profile-frame { width: 200px; height: 200px; padding: 8px; } }
+@media (max-width: 767px) { .profile-frame { width: 160px; height: 160px; padding: 6px; } }
+
+
+/* Hero circular frame */
+.one-third.img { position: relative; }
+.hero-profile-frame {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 420px;
+	height: 420px;
+	border-radius: 50%;
+	padding: 14px;
+	background: linear-gradient(135deg,#ffbd39 0%, #ffb22a 60%, #ff9a00 100%);
+	box-shadow: 0 0 56px rgba(255,189,57,0.24);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform .25s ease, box-shadow .25s ease;
+}
+.hero-profile-frame:hover { transform: scale(1.03); box-shadow: 0 0 72px rgba(0,163,255,0.40); }
+.hero-profile-frame .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 8px solid rgba(255,255,255,0.06); }
+
+@media (max-width: 1399px) { .hero-profile-frame { width: 360px; height: 360px; padding: 12px; } }
+/* Extra safeguard breakpoint for common medium-wide viewports (prevents overlap) */
+@media (max-width: 1366px) {
+	.hero-profile-frame{
+		position: relative !important;
+		left: auto !important;
+		top: auto !important;
+		transform: none !important;
+		margin: 0 auto 1.25rem;
+		display: block;
+		z-index: 99999;
+	}
+	.slider-text { display: flex !important; flex-direction: column; align-items: center; }
+	.one-third.img, .one-forth { width: 100% !important; max-width: 760px; }
+	.one-third.img { order: -1; margin-bottom: 1.25rem; }
+	.one-forth { order: 0; text-align: center; }
+}
+@media (max-width: 1199px) { .hero-profile-frame { width: 320px; height: 320px; padding: 10px; } }
+@media (max-width: 991px) { .hero-profile-frame { width: 260px; height: 260px; padding: 8px; } }
+@media (max-width: 575px) { .hero-profile-frame { width: 200px; height: 200px; padding: 6px; } }
+
+/* Make hero profile flow and stack above text for medium/smaller screens */
+@media (max-width: 1199px) {
+	.hero-profile-frame {
+		position: relative !important;
+		left: auto !important;
+		top: auto !important;
+		transform: none !important;
+		margin: 0 auto 1.25rem;
+		display: block;
+		z-index: 9999;
+	}
+	.one-third.img { position: relative; height: auto; }
+	.one-forth, .one-forth .text { position: relative; z-index: 1; }
+	.one-forth .text { margin-top: .5rem; }
+}
+
+/* Ensure hero image stacks above text (no overlap) on small screens */
+@media (max-width: 991px) {
+	.slider-text { display: flex !important; flex-direction: column; align-items: center; }
+	.one-third.img, .one-forth { width: 100% !important; max-width: 760px; }
+	.one-third.img { order: -1; margin-bottom: 1.25rem; }
+	.one-forth { order: 0; transform: none !important; margin-top: 0 !important; text-align: center; }
+	.hero-profile-frame { position: static !important; margin: 0 auto 1.5rem !important; }
+	.one-forth .text { padding-top: 0.5rem; }
+}
 
 </style>
 
+<style>
+/* Align about details with Skills block */
+.img-about .about-info { padding-left: 24px; }
+.img-about .skill-mf { padding-left: 24px; }
+.img-about .about-info p { margin: .35rem 0; color: #fff; }
+.img-about .about-info .title-s { display: inline-block; width: 140px; font-weight: 700; color: #ffbd39; }
+@media (max-width: 767px) { .img-about .about-info .title-s { width: 110px; } }
+</style>
 
-  </head>
+	</head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
 	  
@@ -141,12 +254,16 @@
 	      	<div class="overlay"></div>
 	         <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/betteroverlay.jpg);">
-	          	 <div class="overlay"></div>
-	          	</div>
+            	<div class="one-third js-fullheight order-md-last img" style="position: relative;">
+	           	 <div class="overlay"></div>
+	           	<!-- Circular framed hero image (uses same source images/image1.jpg) -->
+	           	 <div class="hero-profile-frame">
+	           	   <img src="images/ProfileImage.jpg" alt="Hero image" class="profile-img">
+	           	 </div>
+	           	</div>
 		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
+		          	<!-- <span class="subheading">Hello!</span> -->
 			            <h1 class="mb-4 mt-3">I'm <span>Hari Kishan</span></h1>
 
 						<!-- Element to contain animated typing -->
@@ -188,8 +305,7 @@
 						<br>
 						<br>
 			            <h2>A Software Engineer at HCLTech</h2>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
+                        
 			            <p>
 						<a href="https://github.com/Its-Hari-Kishan" class="btn btn-primary py-3 px-4">My works</a> 
 						</p>
@@ -213,13 +329,10 @@
 							<div class="overlay">
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images/bgc1.jpg" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
 									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
+									
+									<div class="skill-mf">
+									  <div class="pull-right about-info">
 										<p><span class="title-s">Name: </span> <span>Hari Kishan</span></p>
 										<p><span class="title-s">Job Role: </span> <span>Software Engineer</span></p>
 										<p><span class="title-s">Experience: </span> <span>1 Years 5 Months</span></p>
@@ -276,9 +389,14 @@
 									<li class="d-flex"><span>Profile:</span> <span>Software Engineer </span></li>
 									<li class="d-flex"><span>Domain:</span> <span>Software Developer &amp; Tester </span></li>
 									<li class="d-flex"><span>Education:</span> <span>Bachelor of Computer Applications</span></li>
+									<li class="d-flex"><span>Primary skills:</span> <span>Java, Spring Boot, Python, SQL &amp; REST API Design & Testing</span></li>
+									
+									<li class="d-flex"><span>Tools:</span> <span>Selenium Framework, Postman, MS Azure &amp; Git and GitHub</span></li>
+
+									
+									
+									<li class="d-flex"><span>Other Skills:</span> <span>MS office, Manual &amp; Automation Testing</span></li>
 									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
-									<li class="d-flex"><span>Primary skills:</span> <span>Java, Spring Boot, Selenium framework, Postman, Python &amp; SQL</span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>MS Azure, MS office, Manual &amp; Automation Testing</span></li>
 									<li class="d-flex"><span>Interest:</span> <span>Cricket, Traveling</span></li>
 									
 								</ul>
@@ -315,7 +433,7 @@
         </div>
 
 		<div class="row">
-			<h1 class="big-4">Experience</h1>
+			<h1 class="big-4"><strong>Experience</strong></h1>
 			<div class="underline"></div>
 		</div>
 		<br>
@@ -358,7 +476,7 @@
 		<br>
 
 		<div class="row">
-			<h1 class="big-4">Education</h1>
+			<h1 class="big-4"><strong>Education</strong></h1>
 			<div class="underline"></div>
 		</div>
 		<br>
@@ -383,11 +501,7 @@
 				</div>
     		</div>
 
-    		<!-- <div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
-    		</div> -->
+
     	</div>
     </section>
 
@@ -427,7 +541,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="https://github.com/Its-Hari-Kishan/TechiesDatabase_ManualTesting" class="block-20 zoom-effect" style="background-image: url('images/Manual_EMP.webp');">
+              <a href="https://github.com/Its-Hari-Kishan/TechiesDatabase_ManualTesting" class="block-20 zoom-effect" style="background-image: url('images/ManualProject.webp');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -438,32 +552,7 @@
           </div>
         </div>
 	<br>
-		<!-- added justify-content-center to center align the last two projects -->
-		<!-- <div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main">Sales Forecast- Time Series Forecasting</a></h3>
-				  <p>Used multiple machine learning models to forecast sales (retail store) and performed time series analysis.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb">Customer Segmentation using clustering model</a></h3>
-				  <p>Developed a ML model to give various recommendations of financial products &amp; services on target customer groups.</p>
-				</div>
-			  </div>
-			</div>
-		 </div>
-	  </div> -->
+
     </section>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
@@ -485,14 +574,7 @@
               </div>
             </div>
           </div>
-          <!-- <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1000">0</strong>
-                <span>Mentored Students</span>
-              </div>
-            </div>
-          </div> -->
+          
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
@@ -505,8 +587,7 @@
       </div>
 	
 	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
+					<div class="row justify-content-center">
 					<div class="col-md-7 ftco-animate text-center">
 						<h2>More projects on<span> Github  </span> </h2>
 						<div class="heading"> <h4> I love to solve complex business problems &amp; build innovative software solutions that drive impact.</h4>
@@ -515,7 +596,7 @@
 						</div>
 					</div>
 				</div>
-			<!-- </div> -->
+					
 		</div>
 	</section>
 
@@ -541,15 +622,7 @@
 	            <p>Noida, India</p>
 	          </div>
           </div>
-          <!-- <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+ 0 101 0101 101</a></p>
-	          </div>
-          </div> -->
+          
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
@@ -559,24 +632,12 @@
 	            <p><a href="mailto:info@yoursite.com">harikishan.tech@gmail.com</a></p>
 	          </div>
           </div>
-          <!-- <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="#">resumelink</a></p>
-	          </div>
-          </div> -->
+          
 
 		  <div class="container">
 			<br>
 			<br>
-			<!-- <div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
-				</div>
-			</div> -->
+			
 				<br>
 					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
 					  <li class="ftco-animate normal-txt">Find me on  </li>
