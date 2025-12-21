@@ -8,6 +8,19 @@ hamburger.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
 
+// Close mobile menu when a nav link is clicked
+const navLinks = document.querySelectorAll('nav ul li a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // Only close on mobile screens
+    if (window.innerWidth <= 992) {
+      navList.classList.remove('active');
+      hamburger.classList.remove('active');
+    }
+  });
+});
+
 // Dark - Light mode toggle script (SCROLL-SAFE)
 const darkModeButton = document.getElementById('darkModeButton');
 const body = document.body;
