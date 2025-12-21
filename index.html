@@ -1,694 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Hari Kishan portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Portfolio Website</title>
+</head>
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-
-
-
-<style>
-
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
-
-
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 25px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
-
-
-/* project image zoom effect */
-
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
-
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
-
-/* Profile frame: circular image with bright outer ring, subtle glow and animation */
-.about-img { display: flex; align-items: center; justify-content: center; }
-
-.profile-frame {
-	width: 320px;
-	height: 320px;
-	border-radius: 50%;
-	padding: 12px; /* ring thickness */
-	background: linear-gradient(135deg,#ffbd39 0%, #ffb22a 60%, #ff9a00 100%);
-	display: inline-block;
-	box-shadow: 0 0 28px rgba(255,189,57,0.20);
-	transition: transform .25s ease, box-shadow .25s ease;
-	transform-origin: center center;
-	animation: ring-pulse 4s ease-in-out infinite;
-}
-
-.profile-frame:hover { transform: scale(1.03); box-shadow: 0 0 48px rgba(0,163,255,0.38); }
-
-.profile-frame .profile-img {
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	object-fit: cover;
-	display: block;
-	border: 8px solid rgba(255,255,255,0.08); /* subtle inner edge */
-}
-
-@keyframes ring-pulse {
-	0% { transform: rotate(0deg); box-shadow: 0 0 12px rgba(0,163,255,0.18); }
-	50% { transform: rotate(2.5deg); box-shadow: 0 0 34px rgba(0,163,255,0.30); }
-	100% { transform: rotate(0deg); box-shadow: 0 0 12px rgba(0,163,255,0.18); }
-}
-
-@media (max-width: 1399px) { .profile-frame { width: 260px; height: 260px; padding: 10px; } }
-@media (max-width: 991px) { .profile-frame { width: 200px; height: 200px; padding: 8px; } }
-@media (max-width: 767px) { .profile-frame { width: 160px; height: 160px; padding: 6px; } }
-
-
-/* Hero circular frame */
-.one-third.img { position: relative; }
-.hero-profile-frame {
-	position: absolute;
-	left: 60%;
-	top: 45%;
-	transform: translate(-50%, -50%);
-	width: 350px;
-	height: 350px;
-	border-radius: 50%;
-	padding: 14px;
-	background: linear-gradient(135deg,#ffbd39 0%, #ffb22a 60%, #ff9a00 100%);
-	box-shadow: 0 0 56px rgba(255,189,57,0.24);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: transform .25s ease, box-shadow .25s ease;
-}
-.hero-profile-frame:hover { transform: scale(1.03); box-shadow: 0 0 72px rgba(0,163,255,0.40); }
-.hero-profile-frame .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 8px solid rgba(255,255,255,0.06); }
-
-@media (max-width: 1399px) { .hero-profile-frame { width: 360px; height: 360px; padding: 12px; } }
-/* Extra safeguard breakpoint for common medium-wide viewports (prevents overlap) */
-@media (max-width: 1366px) {
-	.hero-profile-frame{
-		position: relative !important;
-		left: auto !important;
-		top: auto !important;
-		transform: none !important;
-		margin: 0 auto 1.25rem;
-		display: block;
-		z-index: 99999;
-	}
-	.slider-text { display: flex !important; flex-direction: column; align-items: center; }
-	.one-third.img, .one-forth { width: 100% !important; max-width: 760px; }
-	.one-third.img { order: -1; margin-bottom: 1.25rem; }
-	.one-forth { order: 0; text-align: center; }
-}
-@media (max-width: 1199px) { .hero-profile-frame { width: 320px; height: 320px; padding: 10px; } }
-@media (max-width: 991px) { .hero-profile-frame { width: 260px; height: 260px; padding: 8px; } }
-@media (max-width: 575px) { .hero-profile-frame { width: 200px; height: 200px; padding: 6px; } }
-
-/* Make hero profile flow and stack above text for medium/smaller screens */
-@media (max-width: 1199px) {
-	.hero-profile-frame {
-		position: relative !important;
-		left: auto !important;
-		top: auto !important;
-		transform: none !important;
-		margin: 0 auto 1.25rem;
-		display: block;
-		z-index: 9999;
-	}
-	.one-third.img { position: relative; height: auto; }
-	.one-forth, .one-forth .text { position: relative; z-index: 1; }
-	.one-forth .text { margin-top: .5rem; }
-}
-
-/* Ensure hero image stacks above text (no overlap) on small screens */
-@media (max-width: 991px) {
-	.slider-text { display: flex !important; flex-direction: column; align-items: center; }
-	.one-third.img, .one-forth { width: 100% !important; max-width: 760px; }
-	.one-third.img { order: -1; margin-bottom: 1.25rem; }
-	.one-forth { order: 0; transform: none !important; margin-top: 0 !important; text-align: center; }
-	.hero-profile-frame { position: static !important; margin: 0 auto 1.5rem !important; }
-	.one-forth .text { padding-top: 0.5rem; }
-}
-
-</style>
-
-<style>
-/* Align about details with Skills block */
-.img-about .about-info { padding-left: 24px; }
-.img-about .skill-mf { padding-left: 24px; }
-.img-about .about-info p { margin: .35rem 0; color: #fff; }
-.img-about .about-info .title-s { display: inline-block; width: 140px; font-weight: 700; color: #ffbd39; }
-@media (max-width: 767px) { .img-about .about-info .title-s { width: 110px; } }
-</style>
-
-	</head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Hari Kishan</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-            	<div class="one-third js-fullheight order-md-last img" style="position: relative;">
-	           	 <div class="overlay"></div>
-	           	<!-- Circular framed hero image (uses same source images/image1.jpg) -->
-	           	 <div class="hero-profile-frame">
-	           	   <img src="images/ProfileImage.jpg" alt="Hero image" class="profile-img">
-	           	 </div>
-	           	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          	<!-- <span class="subheading">Hello!</span> -->
-			            <h1 class="mb-4 mt-3">I'm <span>Hari Kishan</span></h1>
-
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
-
-						<script>
-
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
-
-						// Create an array of typing text
-						const typingTexts = [
-						'Software Engineer  ',
-						'Spring Boot Developer  ',
-						'Student at IIT Guwahati  ',
-						];
-
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
-
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
-						</script>
-
-						<br>
-						<br>
-			            <h2>A Software Engineer at HCLTech</h2>
-                        
-			            <p>
-						<a href="https://github.com/Its-Hari-Kishan" class="btn btn-primary py-3 px-4">My works</a> 
-						</p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
-    </section>
-
-
-
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									</div>
-									
-									<div class="skill-mf">
-									  <div class="pull-right about-info">
-										<p><span class="title-s">Name: </span> <span>Hari Kishan</span></p>
-										<p><span class="title-s">Job Role: </span> <span>Software Engineer</span></p>
-										<p><span class="title-s">Experience: </span> <span>1 Years 5 Months</span></p>
-										<p><span class="title-s">Address: </span> <span>Noida, India</span></p>
-									  </div>
-									</div>
-								  </div>
-
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>Java</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Spring Boot</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Selenium framework</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>API Testing</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>Manual Testing</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p>With 1.5 years of hands-on experience in software development, complemented by a strong foundation in engineering. Proficient in Java, Spring boot, Selenium, SQL, REST APIs, and web application development. Demonstrated success in building scalable applications, optimizing workflows, and collaborating on impactful projects.</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Software Engineer </span></li>
-									<li class="d-flex"><span>Domain:</span> <span>Software Developer &amp; Tester </span></li>
-									<li class="d-flex"><span>Education:</span> <span>Bachelor of Computer Applications</span></li>
-									<li class="d-flex"><span>Primary skills:</span> <span>Java, Spring Boot, Python, SQL &amp; REST API Design & Testing</span></li>
-									
-									<li class="d-flex"><span>Tools:</span> <span>Selenium Framework, Postman, MS Azure &amp; Git and GitHub</span></li>
-
-									
-									
-									<li class="d-flex"><span>Other Skills:</span> <span>MS office, Manual &amp; Automation Testing</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Cricket, Traveling</span></li>
-									
-								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="5">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/itsharikishan/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div> 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </section>
-
-
-
-	
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>Software Engineer with 1.5 years of experience building scalable applications, skilled in coding, debugging, testing and delivering efficient solutions using modern technologies.</p>
-          </div>
+<body>
+    <header>
+        <div class = "container">
+            <nav>
+                <div class ="logo">
+                    <a href="#"><span>Hari </span>Kishan</a>
+                </div>
+                <div class = "list-darkmode-menu">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <label class="mode">
+                        <input type="checkbox" checked = "checked" id="darkModeButton"/>
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </label>
+                    <button class="hamburger">
+                        <div class="bar"></div>
+                    </button>
+                </div>
+            </nav>
         </div>
+    </header>
 
-		<div class="row">
-			<h1 class="big-4"><strong>Experience</strong></h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2024-Present</span>
-						<h2>Software Engineer</h2>
-						<span class="position">HCLTech</span>
-						<p class="mt-4">HCLTech, a leading global technology company with 225K+ professionals across 60 countries, delivering innovative digital, engineering, and cloud solutions to enterprises worldwide.
-							<ul>
-								<li>Developed and deployed scalable web applications, improving system performance by 30% and enhancing user experience.</li>
-								<li>Implemented RESTful APIs and integrated third-party services, reducing data processing time by 25%.</li>
-								<li>Collaborated with cross-functional teams to debug and optimize code, achieving a 15% decrease in application downtime.</li>
-							</ul>
-						</p>
-					</div>
+    <!-- HOME SECTION  -->
+    <section class="home" id="home">
+        <div class="container">
+            <div class="home-info">
+                <div class="left">
+                    <h3>Hello, I'm</h3>
+                    <h1>Hari Kishan</h1>
+                    <h4>And I'm a <span class="multiple"></span></h4>
+                    <p>
+                      Hi! I’m Hari Kishan, an AI-focused Software Engineer with experience in functional & automation testing, backend development and Generative AI. I work with Java, Spring Boot, SQL, APIs, Selenium, and Azure, and I’m passionate about building scalable systems and applying AI to solve real-world problems.
+                    </p> 
+                    <div class="social">
+                        <a href="https://www.linkedin.com/in/itsharikishan"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Its-Hari-Kishan"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 
-				</div>
+                    </div>
+                      <div class="btn">
+                        <a 
+                          href="resouces/CV_Hari_Kishan.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <button>Download CV</button>
+                        </a>
+                      </div>
+                </div>
+                
+                <div class="right">
+                    <div class="profile">
+                        <img src="images/ProfileImage2.jpg" alt="profile picture">
+                    </div>  
 
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2023-2024</span>
-						<h2>Intern</h2>
-						<span class="position">HCL TSS</span>
-						<p class="mt-4">HCL TSS is a training and staffing division of HCLTech, enabling young professionals to build technical expertise and launch their IT careers. 
-							<ul>
-								<li>Learned and applied Manual Testing, Automation Testing using Java & Selenium, and SQL for database validation during internship.</li>
-								<li>Designed and executed test cases and automation scripts, improving defect detection and reducing testing time by 25%.</li>
-								<li>Collaborated with the team to debug, optimize workflows, and ensure seamless application functionality across modules.</li>
-							</ul>
-						</p>
-					</div>
-
-				</div>
-			</div>
-
-		<br>
-		<br>
-
-		<div class="row">
-			<h1 class="big-4"><strong>Education</strong></h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2021-2024</span>
-    					<h2>Bachelor of Computer Applications</h2>
-    					<span class="position">Dharam Samaj College</span>
-    					<p class="mt-4">Grade: First class distinction.</p>
-    				</div>
-    			</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2020-2021</span>
-    					<h2>Higher Secondary School</h2>
-    					<span class="position">Saraswati Vidhya Mandir</span>
-    					<p class="mt-4">Grade: First class distinction.</p>
-    				</div>
-				</div>
-    		</div>
-
-
-    	</div>
+                </div>
+            </div>
+            
+        </div>
     </section>
 
-   
+    <!-- ABOUT SECTION -->
+<section class="about" id="about">
+  <div class="container">
+    <h2 class="section-title">About <span>Me</span></h2>
 
-    <section class="ftco-section" id="project-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>Below are the sample projects on Java, Spring, Selenium, SQL, and Cloud-based applications.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Its-Hari-Kishan/InternetBankingWebsite_SeleniumAutomation" class="block-20 zoom-effect" style="background-image: url('images/Banking.jpeg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
+    <div class="about-content">
+      <div class="about-text">
+        
+        <ul class="about-info">
+          <li><strong>Role:</strong> Software Engineer</li>
+          <li><strong>Domain:</strong> Developer & Tester</li>
+          <li><strong>Education:</strong> BCA</li>
+          <li><strong>Location:</strong> Noida, India</li>
+        </ul>
 
-                <h3 class="heading"><a href="https://github.com/Its-Hari-Kishan/InternetBankingWebsite_SeleniumAutomation">Internet Banking Web Automaion using Selenium with Java</a></h3>
-                <p>Automated core banking workflows and transactions, improving testing efficiency and reducing manual effort.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Its-Hari-Kishan/JavaProject_TechiesDatabse" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
+        <p>
+            I am a Software Engineer with 1.5 years of hands-on experience in building and testing modern applications using Java, Spring Boot, Selenium, SQL, REST APIs, and web technologies. I enjoy developing scalable applications, automating testing workflows, and continuously improving my technical skills. With a strong engineering foundation, I actively collaborate on impactful projects and focus on delivering high-quality, reliable solutions.
+        </p>
 
-                <h3 class="heading"><a href="https://github.com/Its-Hari-Kishan/JavaProject_TechiesDatabse">Employee Management System using Java Swing</a></h3>
-                <p>Developed a desktop application to manage employee records, including add, update, delete, and search functionalities, improving HR data handling and efficiency.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="https://github.com/Its-Hari-Kishan/TechiesDatabase_ManualTesting" class="block-20 zoom-effect" style="background-image: url('images/ManualProject.webp');">
-              </a>
-              <div class="text mt-3 float-right d-block">
+      </div>
+    </div>
+  </div>
+</section>
 
-                <h3 class="heading"><a href="https://github.com/Its-Hari-Kishan/TechiesDatabase_ManualTesting">Manual Testing of Employee Management System</a></h3>
-                <p>Performed comprehensive manual testing of EMS modules, including functional, regression, and UI testing, to ensure accuracy and enhance system reliability.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-	<br>
+<!-- SKILLS SECTION -->
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="section-title">My <span>Skills</span></h2>
 
-    </section>
+    <div class="skills-grid">
+      <div class="skill-card">Java</div>
+      <div class="skill-card">Spring Boot</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">SQL</div>
+      <div class="skill-card">Selenium</div>
+      <div class="skill-card">TestNG</div>
+      <div class="skill-card">Rest Assured</div>
+      <div class="skill-card">Postman</div>
+      <div class="skill-card">HTML & CSS</div>
+      <div class="skill-card">Git & GitHub</div>
+      <div class="skill-card">Microsoft Azure</div>
+    </div>
+  </div>
+</section>
 
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-		<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="10">0</strong>
-                <span>Achievements</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="10">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="100">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
-          </div>
+<!-- PROJECTS SECTION -->
+<section class="projects" id="projects">
+  <div class="container">
+    <h2 class="section-title">My <span>Projects</span></h2>
+    <p class="projects-subtitle">
+      Below are some of my projects built using Java, Spring Boot, Selenium, SQL, and web technologies. You can click on each project to view the code on GitHub.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card image-card">
+        <a 
+          href="https://github.com/Its-Hari-Kishan/InternetBankingWebsite_SeleniumAutomation"
+          target="_blank"
+          class="project-image"
+          style="background-image: url('images/Banking.jpeg');">
+        </a>
+
+        <div class="project-content">
+          <h3>Internet Banking Automation</h3>
+          <p>
+            Automated core banking workflows using Selenium with Java to improve testing efficiency
+            and reduce manual effort.
+            <a
+              href="https://github.com/Its-Hari-Kishan/InternetBankingWebsite_SeleniumAutomation"
+              target="_blank"
+              class="project-text-link">
+            </a>
+          </p>
         </div>
       </div>
-	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-					<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> I love to solve complex business problems &amp; build innovative software solutions that drive impact.</h4>
-						<br>
-						<p><a href="https://github.com/Its-Hari-Kishan" class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
-					</div>
-				</div>
-					
-		</div>
-	</section>
 
+      <!-- Project 2 -->
+      <div class="project-card image-card">
+        <a 
+          href="https://github.com/Its-Hari-Kishan/JavaProject_TechiesDatabse"
+          target="_blank"
+          class="project-image"
+          style="background-image: url('images/proj_5.jpg');">
+        </a>
 
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
+        <div class="project-content">
+          <h3>Employee Management System</h3>
+          <p>
+            Java Swing–based desktop application for managing employee records with CRUD operations.
+            <a
+              href="https://github.com/Its-Hari-Kishan/JavaProject_TechiesDatabse"
+              target="_blank"
+              class="project-text-link">
+            </a>
+          </p>
         </div>
+      </div>
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Noida, India</p>
-	          </div>
-          </div>
-          
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">harikishan.tech@gmail.com</a></p>
-	          </div>
-          </div>
-          
+      <!-- Project 3 -->
+      <div class="project-card image-card">
+        <a 
+          href="https://github.com/Its-Hari-Kishan/TechiesDatabase_ManualTesting"
+          target="_blank"
+          class="project-image"
+          style="background-image: url('images/ManualProject.webp');">
+        </a>
 
-		  <div class="container">
-			<br>
-			<br>
-			
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/itsharikishan/"><span class="icon-linkedin"></span></a></li>  
-					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
-					  <!-- <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-twitter"></span></a></li>
-					  <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-facebook"></span></a></li>
-				      <li class="ftco-animate"><a href="https://www.instagram.com/rishabhnmishra/"><span class="icon-instagram"></span></a></li> -->
-					</ul>
-				<br>
-		   </div>
-   </div>
- </section>
+        <div class="project-content">
+          <h3>Manual Testing – EMS</h3>
+          <p>
+            Performed functional, regression, and UI testing to ensure system reliability and accuracy.
+            <a
+              href="https://github.com/Its-Hari-Kishan/TechiesDatabase_ManualTesting"
+              target="_blank"
+              class="project-text-link">
+            </a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
- 
-	
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact <span>Me</span></h2>
 
-				<p>
-				&copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Built and maintained by Hari Kishan
-				</p>
-  
+    <form class="contact-form" id="contact-form">
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="Your Name" 
+        required 
+      />
 
-			</div>
-		  </div>
-		</div>
-	  </footer>
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Your Email" 
+        required 
+      />
+
+        <textarea
+        name="message"
+        rows="5"
+        placeholder="Your Message"
+        required
+        autocomplete="off"
+        spellcheck="false">
+        </textarea>
 
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+      <button type="submit">Send Message</button>
+
+        <p id="form-status"></p>
+    </form>
+
+  </div>
+</section>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
-  </body>
+<footer class="footer">
+  <div class="container">
+    <p>
+      © <span id="year"></span> Hari Kishan. All rights reserved. <br />
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="main.js"></script>
+
+</body>
 </html>
