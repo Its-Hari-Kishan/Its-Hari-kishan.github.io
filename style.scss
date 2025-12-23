@@ -230,7 +230,7 @@ header {
     background: var(--bg-color);
     position: relative;
     width: 100%;
-    min-height: calc(100vh - 90px);
+    min-height: auto;
     padding: clamp(100px, 12vh, 140px) 0 50px;
 
     .home-info {
@@ -395,6 +395,18 @@ header {
         }
     }
 }
+
+
+@media screen and (max-width: 1366px) {
+    section {
+        padding: 60px 0;     // ✅ reduce vertical gap
+    }
+
+    .home {
+        padding: 90px 0 40px; // ✅ tighter hero spacing
+    }
+}
+
 
 
 @media screen and (max-width: 992px) {

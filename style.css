@@ -187,7 +187,7 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   background: var(--bg-color);
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 90px);
+  min-height: auto;
   padding: clamp(100px, 12vh, 140px) 0 50px;
 }
 .home .home-info {
@@ -312,6 +312,14 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   .home .home-info .right .profile img {
     width: 400px;
     height: 400px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  section {
+    padding: 60px 0;
+  }
+  .home {
+    padding: 90px 0 40px;
   }
 }
 @media screen and (max-width: 992px) {
