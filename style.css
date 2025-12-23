@@ -37,6 +37,7 @@ body.dark-mode {
   max-width: 1250px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 @media screen and (max-width: 992px) {
@@ -304,9 +305,6 @@ header nav .list-darkmode-menu .hamburger.active .bar {
 @media screen and (max-width: 1280px) {
   header nav {
     padding: 0 50px;
-  }
-  .home {
-    padding: 250px 50px;
   }
   .home .home-info .left h1 {
     font-size: 4em;

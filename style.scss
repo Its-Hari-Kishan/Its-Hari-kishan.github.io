@@ -37,6 +37,7 @@ body.dark-mode {
     max-width: 1250px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 24px;
 }
 
 // Global container padding for all sections (except Home which already has padding)
@@ -376,7 +377,6 @@ header {
     }
 
     .home {
-        padding: 250px 50px;
         .home-info {
             .left {
                 h1 {
