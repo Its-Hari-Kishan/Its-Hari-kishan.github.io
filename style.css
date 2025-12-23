@@ -187,7 +187,8 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   position: relative;
   width: 100%;
   min-height: calc(100vh - 90px);
-  padding: clamp(100px, 12vh, 140px) 0 50px;
+  padding-top: 120px;
+  padding-bottom: 50px;
 }
 .home .home-info {
   display: flex;
@@ -305,13 +306,10 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   header nav {
     padding: 0 50px;
   }
-  .home {
-    padding: 250px 50px;
-  }
-  .home .home-info .left h1 {
+  .home-info .left h1 {
     font-size: 4em;
   }
-  .home .home-info .right .profile img {
+  .home-info .right .profile img {
     width: 400px;
     height: 400px;
   }

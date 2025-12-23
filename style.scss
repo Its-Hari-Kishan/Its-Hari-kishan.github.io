@@ -230,7 +230,8 @@ header {
     position: relative;
     width: 100%;
     min-height: calc(100vh - 90px);
-    padding: clamp(100px, 12vh, 140px) 0 50px;
+    padding-top: 120px;   // consistent space below header
+    padding-bottom: 50px;
 
     .home-info {
         display: flex;
@@ -355,6 +356,7 @@ header {
                     cursor: pointer;
                     transition: 0.3s ease;
 
+
                     &:hover {
                         transform: scale(1.05);
                         box-shadow: 0 0 80px var(--color);
@@ -374,11 +376,9 @@ header {
             padding: 0 50px;
         }
     }
-
-    .home {
-        padding: 250px 50px;
+    
         .home-info {
-            .left {
+            .left { 
                 h1 {
                     font-size: 4em;
                 }
@@ -394,7 +394,6 @@ header {
             }
         }
     }
-}
 
 
 @media screen and (max-width: 992px) {
