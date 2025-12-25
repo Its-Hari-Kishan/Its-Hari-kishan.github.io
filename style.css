@@ -61,6 +61,9 @@ header {
   z-index: 10;
 }
 header nav {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -194,6 +197,9 @@ header nav .list-darkmode-menu .hamburger.active .bar {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 .home .home-info .left {
   flex: 1;

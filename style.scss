@@ -67,9 +67,13 @@ header {
     z-index: 10;        
 
     nav { 
-        display: flex; 
-        align-items: center;
-        justify-content: space-between;
+            max-width: 1250px;   
+            margin: 0 auto;      
+            padding: 0 24px;     
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
         .logo {
             z-index: 1;
@@ -237,6 +241,10 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        max-width: 1250px;   
+        margin: 0 auto;      
+        padding: 0 24px;     
 
         .left {
             flex: 1;
